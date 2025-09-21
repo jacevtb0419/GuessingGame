@@ -1,15 +1,24 @@
 import random
 
-# Set up guesses and attempts
-max_guesses = 10
-guesses_taken = 0
-
 #Have user choose which mode they want to play
-user_mode = int(input("Press '1' for easy mode, '2' for hard mode, and '3' for impossible mode. "))
+user_mode = int(input("Press '1' for easy mode, '2' for hard mode, and '3' for impossible mode. \n"
+                      "easy mode = 10 guesses, hard mode = 5 guesses, impossible mode = 3 guesses "))
+
+def main():
+    if user_mode == 1:
+        easy_mode()
+    elif user_mode == 2:
+        hard_mode()
+    elif user_mode == 3:
+        impossible_mode()
+    else:
+        print("Invalid input. Try again!")
 
 # easy mode
-if user_mode == 1:
+def easy_mode():
     lucky_number = random.randint(1,10)
+    max_guesses = 10    
+    guesses_taken = 0
     # Start Game loop
     while guesses_taken < max_guesses:
         try:
@@ -36,8 +45,10 @@ if user_mode == 1:
             break
 
 #hard mode
-if user_mode == 2:
+def hard_mode():
     lucky_number = random.randint(1,100)
+    max_guesses = 5
+    guesses_taken = 0
     # Start Game loop
     while guesses_taken < max_guesses:
         try:
@@ -64,9 +75,10 @@ if user_mode == 2:
             break
 
 #impossible mode
-if user_mode == 3:
+def impossible_mode():
     lucky_number = random.randint(1,100)
-    
+    max_guesses = 3
+    guesses_taken = 0
     # Start Game loop
     while guesses_taken < max_guesses:
         try:
@@ -95,3 +107,5 @@ if user_mode == 3:
         if guess != lucky_number and guesses_taken == 3:
             print(f"You ran out of guesses! Game over.")
             break
+
+main()
