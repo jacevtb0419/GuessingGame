@@ -1,4 +1,7 @@
+from flask import Flask
 import random
+
+app = Flask(__name__)
 
 #Have user choose which mode they want to play
 user_mode = int(input("Press '1' for easy mode, '2' for hard mode, and '3' for impossible mode. \n"
