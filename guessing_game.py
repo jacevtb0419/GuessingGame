@@ -38,14 +38,22 @@ def easy_mode():
             print("Too low!")
         elif guess > lucky_number:
             print("Too high!")
-        else:
+        elif guess == lucky_number:
             print(f"Good job! You guessed the lucky number in {guesses_taken} guesses!")
-            break
-
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. ")
+            if play_again == 'a':
+                main()
+            else:
+                break
         # If the user runs out of guesses
-        if guess != lucky_number and guesses_taken == 5:
+        if guess != lucky_number and guesses_taken == 10:
             print(f"You ran out of guesses! Game over.")
-            break
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If no, press enter. ")
+            if play_again == 'a':
+                main()
+            else:
+                break
+
 
 #hard mode
 def hard_mode():
@@ -68,14 +76,22 @@ def hard_mode():
             print("Too low!")
         elif guess > lucky_number:
             print("Too high!")
-        else:
+        elif guess == lucky_number:
             print(f"Good job! You guessed the lucky number in {guesses_taken} guesses!")
-            break
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If no, press enter. ")
+            if play_again == 'a':
+                main()
+            else:
+                break
 
         # If the user runs out of guesses
-        if guess != lucky_number and guesses_taken == 10:
+        if guess != lucky_number and guesses_taken == 5:
             print(f"You ran out of guesses! Game over.")
-            break
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If no, press enter. ")
+            if play_again == 'a':
+                main()
+            else:
+                break
 
 #impossible mode
 def impossible_mode():
@@ -102,13 +118,21 @@ def impossible_mode():
             print("Too low!")
         elif guess > lucky_number:
             print("Too high!")
-        else:
+        elif guess == lucky_number:
             print(f"Good job! You guessed the lucky number in {guesses_taken} guesses!")
-            break
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. ")
+            if play_again == 'a':
+                main()
+            else:
+                break
 
         # If the user runs out of guesses
         if guess != lucky_number and guesses_taken == 3:
             print(f"You ran out of guesses! Game over.")
-            break
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If no, press enter. ")
+            if play_again == 'a':
+                main()
+            else:
+                break
 
 main()
