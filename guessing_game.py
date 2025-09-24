@@ -1,7 +1,4 @@
-from flask import Flask
 import random
-
-app = Flask(__name__)
 
 #Have user choose which mode they want to play
 user_mode = int(input("Press '1' for easy mode, '2' for hard mode, and '3' for impossible mode. \n"
@@ -40,20 +37,24 @@ def easy_mode():
             print("Too high!")
         elif guess == lucky_number:
             print(f"Good job! You guessed the lucky number in {guesses_taken} guesses!")
-            play_again = input("Would you like to play again? If so press the 'a' key and enter. ")
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If not press 'q'. ")
             if play_again == 'a':
                 main()
-            else:
+            elif play_again == 'q':
                 break
+            else:
+                print("Invalid input. Try again!")
+
         # If the user runs out of guesses
         if guess != lucky_number and guesses_taken == 10:
             print(f"You ran out of guesses! Game over.")
-            play_again = input("Would you like to play again? If so press the 'a' key and enter. If no, press enter. ")
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If not press 'q'. ")
             if play_again == 'a':
                 main()
-            else:
+            elif play_again == 'q':
                 break
-
+            else:
+                print("Invalid input. Try again!")
 
 #hard mode
 def hard_mode():
@@ -78,20 +79,24 @@ def hard_mode():
             print("Too high!")
         elif guess == lucky_number:
             print(f"Good job! You guessed the lucky number in {guesses_taken} guesses!")
-            play_again = input("Would you like to play again? If so press the 'a' key and enter. If no, press enter. ")
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If not press 'q'. ")
             if play_again == 'a':
                 main()
-            else:
+            elif play_again == 'q':
                 break
+            else:
+                print("Invalid input. Try again!")
 
         # If the user runs out of guesses
         if guess != lucky_number and guesses_taken == 5:
             print(f"You ran out of guesses! Game over.")
-            play_again = input("Would you like to play again? If so press the 'a' key and enter. If no, press enter. ")
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If not press 'q'. ")
             if play_again == 'a':
                 main()
-            else:
+            elif play_again == 'q':
                 break
+            else:
+                print("Invalid input. Try again!")
 
 #impossible mode
 def impossible_mode():
@@ -120,7 +125,7 @@ def impossible_mode():
             print("Too high!")
         elif guess == lucky_number:
             print(f"Good job! You guessed the lucky number in {guesses_taken} guesses!")
-            play_again = input("Would you like to play again? If so press the 'a' key and enter. ")
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If not press 'q'. ")
             if play_again == 'a':
                 main()
             else:
@@ -129,10 +134,12 @@ def impossible_mode():
         # If the user runs out of guesses
         if guess != lucky_number and guesses_taken == 3:
             print(f"You ran out of guesses! Game over.")
-            play_again = input("Would you like to play again? If so press the 'a' key and enter. If no, press enter. ")
+            play_again = input("Would you like to play again? If so press the 'a' key and enter. If not press 'q'. ")
             if play_again == 'a':
                 main()
-            else:
+            elif play_again == 'q':
                 break
+            else:
+                print("Invalid input. Try again!")
 
 main()
